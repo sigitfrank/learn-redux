@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 
 export const MainContainer = styled.div`
   width:100%;
@@ -10,6 +10,10 @@ export const MainContainer = styled.div`
   display:flex;
   align-items:center;
   justify-content:center;
+  ${({ bgColor }) => bgColor && css`
+    background-color:${bgColor}
+  `}
+
 `
 
 

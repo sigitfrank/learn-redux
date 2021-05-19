@@ -1,3 +1,4 @@
+import React from 'react'
 import { IoAddCircleSharp } from 'react-icons/io5'
 import { AiFillMinusCircle } from 'react-icons/ai'
 import { Button, ButtonContainer } from './components/Button'
@@ -6,20 +7,20 @@ import { CounterContainer } from './components/Counter'
 import Fade from 'react-reveal/Fade'
 import { useSelector, useDispatch } from 'react-redux'
 import { decrement, increment, login, logout } from './actions/index'
+import getRandomColor from './helpers/getRandomColor'
 function App() {
   // getReducer from store
-  const counter = useSelector(state => state.counter)
+  const counter = useSelector(state => state.counter )
   const auth = useSelector(state => state.loggedInReducer)
   const dispatch = useDispatch()
 
   if (!auth.isLoggedIn) return <Fade> <h1>You are not login. <Button onClick={() => dispatch(login())}> Click here to login</Button></h1></Fade>
 
-
   return (<>
-    <MainContainer>
+    <MainContainer bgColor={getRandomColor()}>
       <SecondContainer>
         <Fade cascade top>
-          <CounterContainer>
+          <CounterContainer bgColor={getRandomColor()}>
             {counter.value}
           </CounterContainer>
         </Fade>
