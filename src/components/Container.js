@@ -10,13 +10,11 @@ export const MainContainer = styled.div`
   display:flex;
   align-items:center;
   justify-content:center;
-  ${({ bgColor }) => bgColor && css`
-    background-color:${bgColor}
+  ${({ bgColor }) => bgColor &&
+    css`
+    background-color:${bgColor};
   `}
-
 `
-
-
 export const SecondContainer = styled.div`
   text-align:center;
 `
